@@ -70,7 +70,6 @@ final class LocalWebhookHandler
         // Write JSON file to disk so nginx can serve it without calling the PHP stack at all.
         $this->logger->debug('Writing static nowplaying text file...');
 
-        $staticNpPath = $staticNpDir . '/' . $station->short_name . '.json';
         $fsUtils->dumpFile(
             $staticNpPath,
             json_encode($np, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) ?: ''
