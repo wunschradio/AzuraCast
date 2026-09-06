@@ -46,8 +46,8 @@ final readonly class NowPlayingComponent implements VueComponentInterface
 
         return new NowPlayingProps(
             stationShortName: $station->short_name,
-            useStatic: $customization->useStaticNowPlaying(),
-            useSse: $customization->useStaticNowPlaying() && $this->centrifugo->isSupported()
+            useStatic: $useStatic,
+            useSse: $useStatic && $this->centrifugo->isSupported()
         );
     }
 }
